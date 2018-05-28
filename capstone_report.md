@@ -13,10 +13,9 @@ I would roughly classify exterior pictures of (mid-rise to high rise) buildings 
 Judging the style of architecture is kind of subjective without very concrete standards now, and a person need to learn a lot about architectural history and current famous architects to tell the possible style of a building. I want to design an algorithm to identify the possible style of building in a photo or rendering. For this project, I just focus on about 10 common architectural styles.  
 Based on this project, later I want to develop a project to help generate pictures of buildings based on input, view, objects and architectural style.
 ### Relevant Research
-There are some existing researches about classifying architectural styles and scenes. Most of them are about classifying traditional styles:  
+There are some existing researches about classifying architectural styles and scenes. Many of them are about classifying traditional styles and scenes:  
 [Classification of Architectural Heritage Images Using Deep Learning Techniques]( https://www.researchgate.net/publication/320052364_Classification_of_Architectural_Heritage_Images_Using_Deep_Learning_Techniques)  
-[Classifying U.S. Houses by Architectural Style Using Convolutional Neural Networks](
-http://cs231n.stanford.edu/reports/2017/pdfs/126.pdf)  
+[Classifying U.S. Houses by Architectural Style Using Convolutional Neural Networks](http://cs231n.stanford.edu/reports/2017/pdfs/126.pdf)  
 [Automatic Architectural Style Recognition](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XXXVIII-5-W16/171/2011/isprsarchives-XXXVIII-5-W16-171-2011.pdf)  
 [Training an Architectural Classifier](https://hackernoon.com/training-an-architectural-classifier-5f1b4f512368)  
 [Research on Classification of Architectural Style Image Based on Convolutional Neural Network](https://ieeexplore.ieee.org/document/8122517/metrics?part=1)
@@ -107,11 +106,12 @@ Batch_size=8
 The result:  
 Test accuracy: 71.50%  
 ##### Architecture scene Classification
-* Use principal components as input and use train scene data set to train a SVM classifier to classify the scenes.   
+* Use 40 principal components as input and use train scene data set to train a SVM classifier to classify the scenes.   
+* The final precision is 0.72.
 
 ##### Objects recognition
 * Install darkflow and import the YOLO model and load its weights.
-* Write an algorithm with OpenCV2 to draw the frame and label of objects detected by YOLO model.
+* Write an algorithm with OpenCV2 to draw the frame and label of objects detected by YOLO model. The image below is an example.
 ![recognition](test_results/1.png )
 
 ##### Write the algorithm for the Project
@@ -211,8 +211,8 @@ Style:  Japan Modern
 Scene:  roadview  
 Style:  Western Classical
 
-_Some classifications are wrong and some parts of some buildings are mistakenly recognized as objects._
-
+_* Some classifications are wrong and some parts of some buildings are mistakenly recognized as objects._  
+_* Some pictures are not exactly one of these styles but algorithm will give a style that is close._
 ### Reflection
 
 The process for the project can be summarized as the following steps:
